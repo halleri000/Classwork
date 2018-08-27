@@ -6,18 +6,24 @@ background-repeat:no-repeat;
 background-size:contain;
 background-position:center center;
 background-attachment:fixed;
+font-size:100%;
 }
 
 header {
  background-color: rgb(255,57,57); 
+ background-image:url("https://jlaw21.github.io/Resources/mario-pipe.png");
+ font-family:'Press Start 2P', cursive;
 }
 
 section {
 background-color:teal; 
+color: antiquewhite;
+font-style:italics;
 }
 
 section header {
     color: #00ce00;
+
 }
 
 aside {
@@ -37,5 +43,11 @@ nav {
 }
 
 h3 {
-    color: #00deff;
+    color: #3205fc;
+    font-size:1.4em;
+    font-style: oblique;
+}
+
+p, li {
+    font: small-caps 32px 'VT323',monospace;
 }
