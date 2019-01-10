@@ -7,21 +7,27 @@ LOCAL VARIABLES - the variable can only be used in the sectrion it was defined
 
 
 */
-$(document).ready(function(){
+
+//ACTIVE
+/*$(document).ready(function(){
+
     getInfo();
     showInfo();
-})
 
 
-var userInput;
+});*/
+
+//DEFINITIONS
+var userName;
 
 
 function getInfo(){
-    userInput = "Hi";
-    var userInputInput2 = "Hi Again";
+    userName = $("#userName").val();
 }
 
 function showInfo(){
-    alert(userInput);
-    alert(userInput2);
+    getInfo();
+    var message = "Hello" +  userName + ", glad to meet you!";
+
+    $("#output").text(message);
 }
