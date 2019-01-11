@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script src="lesson1.js"></script>
         <link rel="stylesheet" href='lesson1.css'>
     </head>
     <body>
+        <!--HTML EVENT TRIGGERING
         <form>
             <fieldset> 
                 <label for='userName'> Please enter your name </label>
@@ -14,6 +16,17 @@
                 <button type="button" onclick="showInfo()"> SUBMIT </button>
             </fieldset>
         </form>
+        -->
+
+        <!--JQUERY EVENT TRIGGERING-->
+        <form>
+            <fieldset> 
+                <label for='userName'> Please enter your name </label>
+                <input type="text" id="userName"/>
+                <button type="button" id="button"> SUBMIT </button>
+            </fieldset>
+        </form>
+
         <div id="output"></div>
     </body>
 </html>

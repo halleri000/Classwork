@@ -1,5 +1,5 @@
 body{
-    font-size:18px;
+    font-size:24px;
 }
 fieldset{
     width:600px;
@@ -19,6 +19,7 @@ input{
 }
 
 button{
+
     display:block;
     clear:both;
     margin-left:auto;
@@ -26,5 +27,11 @@ button{
 }
 
 #output{
+
     text-align: center;
+    display: none;
+    position:relative;
+    top:600px;
+    opacity:0;
+
 }
