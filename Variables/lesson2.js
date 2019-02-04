@@ -12,7 +12,7 @@ $(documnent).ready(function(){
 
     $("#modulo").click(function(){
         modulus();
-    })
+    });
 
     $('#time').click(function(){
         time();
@@ -24,7 +24,7 @@ $(documnent).ready(function(){
 
     $('#pow').click(function(){
         pow();
-
+    });
     $('#abs').click(function(){
         abs();
     });
@@ -33,7 +33,7 @@ $(documnent).ready(function(){
         sqrt();
     });
 
-});
+})
 
 
 
