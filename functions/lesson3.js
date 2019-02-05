@@ -1,14 +1,15 @@
-$("#document").ready(function(){
 
-    $("#button").click(function(){
+$("#document").ready(function () {
+
+    $("#button").click(function () {
+
         calculateMidpoint();
-    
-    })
+        output();
 
+    })
 });
 
-
-var calculateMidpoint = function(){
+var calculateMidpoint = function () {
 
     var x1 = parseInt($("#input1").val());
     var x2 = parseInt($("#input3").val());
@@ -23,10 +24,29 @@ var calculateMidpoint = function(){
 
 }
 
-var midpoint = function( x1, y1, x2, y2 ){
+var midpoint = function (x1, y1, x2, y2) {
 
-    var midpointX = (x1 + x2)/2;
-    var midpointY = (y1 + y2)/2;
+    var midpointX = (x1 + x2) / 2;
+    var midpointY = (y1 + y2) / 2;
 
-$("#output").append("The midpoint is: (" + midpointX + "," + midpointY + ")");
+    $("#output").append("The midpoint is: (" + midpointX + "," + midpointY + ")");
+
+}
+
+
+var input = function(a){
+
+    var userInput = $(a).val();
+
+    return userInput;
+
+}
+
+
+var output = function(){
+
+    var userInput = input("#input1");
+
+    $("#output").text("Hello. The first number is " + input("#input1") + ", And the second is " + input('#input2'));
+
 }
