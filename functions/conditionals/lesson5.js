@@ -1,38 +1,33 @@
-$("document").ready(function(){
+$("document").ready(function () {
 
-    $("#comparisons").click(function(){
-
-            output("#input1" , "#input2");
-    
-    
+    $("#comparisons").click(function () {
+        output("#input1", "#input2");
     })
-
-    $("#conditional").click(function(){
-
-            output("#input1" , "#input2");
-
+    $("#conditional").click(function () {
+        output(conditional(input("#input1"), input("#input2")));
+        output(evenOrOdd(input("#input1")));
+        output(canDrive());
+        output(withLaw());
     })
 });
 
-var input = function(a){
+var input = function (a) {
 
     var userInput = $(a).val();
 
-    return userInput;
+   return userInput;
 
 }
 
+var compare = function (a, b) {
 
-var compare = function(a,b){
-
-    return input(a) == input(b);
+    return input(a) === input(b);
 
 }
 
+var output = function (a, b) {
 
-var output = function (a, b){
-
-    $("#output").text(conditional(input(a), input(b)));
+    $("#output").text(a);
 
 }
 
@@ -40,9 +35,54 @@ var output = function (a, b){
 
 //A conditional is an if/then statement based on a boolean expression.
 
-var conditional = function(a, b){
+var conditional = function (a, b) {
 
-    if(a > b)
+    if (a > b)
         return "A is bigger";
+    if (b > a)
+        return "B is bigger";
+    if(b == a)
+        return "They are the same";
+}
+
+
+
+var evenOrOdd = function(a){
+
+    if(a%2===0){
+        return(a + " is even");
+    }
+    else
+        return(a + " is odd");
+
+}
+
+//Compound boolean expression use AND (&&), OR (||), NOR to make even deeper logical conjunctions.
+
+//If you are 16 and have a license you can legally drive.
+
+var canDrive = function(){
+
+    var age = parseInt(input("#input1"));
+    var license = input("#input2");    
+
+    if(age >= 16 && license == "yes"){
+        return "You can drive.";
+}
+    else
+        return "You can drive just don't get caught.";
+}
+
+var withLaw = function(){
+
+    var ap = (input("#input"));
+    var cs3 = (input("#input2"));
+
+    if(ap ==="yes" || "yes"){
+        return "You will be in Law's class."
+    }
+    else
+        return " You will not be in Law's class."
+
 
 }
