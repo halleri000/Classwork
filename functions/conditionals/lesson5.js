@@ -16,6 +16,7 @@ var input = function (a) {
     var userInput = $(a).val();
 
    return userInput;
+   
 
 }
 
