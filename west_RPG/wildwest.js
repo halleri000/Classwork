@@ -59,7 +59,7 @@ var N2 = "This ranger was the most dangerous archer known to man. He loved to ..
 var N3 = "This robot had killer instincts. Purge the wild west of all evil-doers. Armed with a phaser he..."
 var N5 = "The ranger approaches the insidious Mr. Pig. He raises his bow and ... "
 var N6 = "The robot approaches the insidious Mr. Pig. He raises his phaser and ..."
-var N7 = "The troll began to get prepared to help Mr. Pig by..."
+var N7 = "The troll made the ranger..."
 var N8 = " The troll started making people..."
 var O1 = "ranger."
 var O2 = "robot."
@@ -71,8 +71,8 @@ var O7 = "purges the wild west of all evil-doers."
 var O81 = "shoots the arrow through Mr.Pig."
 var O82 = "fires, vaporizing Mr. Pig."
 var O9 = "tall troll"
-var O10 = "Shooting the ranger..."
-var O11 = " Go to bed"
+var O10 = "pay the troll toll to get to Mr. Pig..."
+var O11 = " swim in a volcano"
 
 
 
