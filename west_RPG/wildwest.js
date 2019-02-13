@@ -17,7 +17,7 @@ $(document).ready(function(){
             $('#button1').text(O3)
             $('#button2').text(O4)
             $('#button3').text(O5)
-            $('#button3').show()
+
         }
         else if($('#button1').text() === O3){
         updateNarrative(N5);
