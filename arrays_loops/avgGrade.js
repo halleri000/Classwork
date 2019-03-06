@@ -11,7 +11,7 @@ var numStudents = function(){
 
 }
 
-var studentGrades = function(num){
+var studentsGrades = function(num){
 
         var grades = [];
 
