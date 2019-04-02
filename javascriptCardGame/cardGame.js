@@ -5,7 +5,6 @@ function Card(rank, suit){
     this.suit = suit;
 
     this.toString = cardToString;
-  //  this.creatNode = cardCreateNode; //handle images and graphics
 
 }
 
