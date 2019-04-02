@@ -80,7 +80,7 @@ function deckMakeDeck(){
 
 function deckShuffle(){
 
-    for(i = 0; i <= this.cards.length; i++){
+    for(var i = 0; i <= this.cards.length; i++){
         var tribute = parseInt(Math.random()*this.cards.length);
         var temp = this.cards[i];
         this.cards[i] = this.cards[tribute];
