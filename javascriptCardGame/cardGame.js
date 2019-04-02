@@ -5,9 +5,9 @@ function Card(rank, suit){
     this.suit = suit;
 
     this.toString = cardToString;
+  //  this.creatNode = cardCreateNode; //handle images and graphics
 
 }
-
 function cardToString() {
 
     var rank, suit;
@@ -48,8 +48,49 @@ function cardToString() {
     }
 
     return rank + " of " + suit;
+}
+var rank = parseInt((Math.random()*12)+1);
+var suit = parseInt((Math.random()*3)+1);
+var testCard = new Card(rank,suit);
+alert(testCard.toString());
 
+function Deck() {
+
+    this.cards = [];
+
+    this.makeDeck = deckMakeDeck;
+    this.shuffle = deckShuffle;
+   // this.deal = deckDeal;
+   // this.addCard = deckAddCard;
+   // this.stackDeck = deckStackDeck;
+// this.cardCount = deckCardCount;
 }
 
-var testCard = new Card(1,3);
-alert(testCard, toString);
+function deckMakeDeck(){
+
+    var maxSuit = 4;
+    var maxRank = 13;
+
+    for(var suit = 1; suit <= maxSuit; suit++ ){
+        for(var rank = 1; rank <= maxRank; rank++){
+            this.cards.push(new Card(rank, suit));
+        }
+    }
+}
+
+function deckShuffle(){
+
+    for(i = 0; i <= this.cards.length; i++){
+        var tribute = parseInt(Math.random()*this.cards.length);
+        var temp = this.cards[i];
+        this.cards[i] = this.cards[tribute];
+        this.cards[tribute] = temp;
+    }
+}
+
+
+var deck = new Deck();
+deck.makeDeck();
+deck.shuffle();
+
+alert(deck.cards);
