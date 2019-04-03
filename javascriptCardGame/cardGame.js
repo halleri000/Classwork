@@ -32,18 +32,18 @@ function cardToString() {
         case 11: rank = "J"; break;
         case 12: rank = "Q"; break;
         case 13: rank = "K"; break;
-        default: rank = null;break;
+        default: rank = null; break;
     }
 
     switch(this.suit){
-        case 1: suit = "Clubs";break;
-        case 2: suit = "Diamonds";break;
-        case 3: suit = "Hearts";break;
+        case 1: suit = "Clubs"; break;
+        case 2: suit = "Diamonds"; break;
+        case 3: suit = "Hearts"; break;
         case 4: suit = "Spades"; break;
-        default: suit=null; break;
+        default: suit = null; break;
     }
 
-    if(rank == null || suit ==null){
+    if(rank == null || suit == null){
         return "INVALID CARD. STOP "
     }
 
@@ -80,7 +80,7 @@ function deckMakeDeck(){
 
 function deckShuffle(){
 
-    for(var i = 0; i <= this.cards.length; i++){
+    for(var i = 0; i < this.cards.length; i++){
         var tribute = parseInt(Math.random()*this.cards.length);
         var temp = this.cards[i];
         this.cards[i] = this.cards[tribute];
