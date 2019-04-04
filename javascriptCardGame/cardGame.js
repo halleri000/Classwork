@@ -60,9 +60,10 @@ function Deck() {
 
     this.makeDeck = deckMakeDeck;
     this.shuffle = deckShuffle;
-   // this.deal = deckDeal;
-   // this.addCard = deckAddCard;
-   // this.stackDeck = deckStackDeck;
+    this.deal = deckDeal;
+    this.draw = deckDraw;
+    this.addCard = deckAddCard;
+    this.combine = deckStackDeck;
 // this.cardCount = deckCardCount;
 }
 
@@ -88,9 +89,64 @@ function deckShuffle(){
     }
 }
 
+function deckDeal(){
+    
+    if(this.cards.length > 0){
+       return this.cards.shift();
+    }else
+        return null;
+}
+
+function deckDraw(n){
+
+    if(n >= 0 && n < this.cards.length){
+        return this.cards.splice(n-1,1);
+        
+    }else
+        return null;
+}
+function deckAddCard(card){
+        this.cards.push(card);
+}
+
+
+function deckStackDeck(deck){
+    for(var i = 0; i < deck.cards.length; i++){
+        this.cards.push(deck.cards[i]);
+    }
+    deck.cards = [];
+
+}
 
 var deck = new Deck();
+var hand = new Deck();
+
 deck.makeDeck();
 deck.shuffle();
+alert(deck.cards);
+
+for(var i = 0; i < 7; i++){
+    hand.addCard(deck.deal());
+}
+
+alert(hand.cards);
+
+deck.combine(hand);
 
 alert(deck.cards);
+alert(hand.cards);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
