@@ -5,7 +5,7 @@ function Card(rank, suit){
     this.suit = suit;
 
     this.toString = cardToString;
-  //  this.creatNode = cardCreateNode; //handle images and graphics
+    this.image = cardImage; //handle images and graphics
 
 }
 function cardToString() {
@@ -36,10 +36,10 @@ function cardToString() {
     }
 
     switch(this.suit){
-        case 1: suit = "Clubs"; break;
-        case 2: suit = "Diamonds"; break;
-        case 3: suit = "Hearts"; break;
-        case 4: suit = "Spades"; break;
+        case 'C': suit = "Clubs"; break;
+        case 'D': suit = "Diamonds"; break;
+        case 'H': suit = "Hearts"; break;
+        case 'S': suit = "Spades"; break;
         default: suit = null; break;
     }
 
@@ -49,10 +49,19 @@ function cardToString() {
 
     return rank + " of " + suit;
 }
+function cardImage(){
+
+    var img = document.createElement("IMG");
+    img.src='cards/'+this.rank + this.suit + ".png";
+
+    return img;
+//document.getElementById(elementID).append(img);
+
+}
 var rank = parseInt((Math.random()*12)+1);
 var suit = parseInt((Math.random()*3)+1);
-var testCard = new Card(rank,suit);
-alert(testCard.toString());
+var testCard = new Card(3,'D');
+$("#hand").append(testCard.image("hand"));
 
 function Deck() {
 
