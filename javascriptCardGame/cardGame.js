@@ -18,7 +18,6 @@ function cardToString() {
     }*/
 
     switch(this.rank){
-
         case 1: rank = "A"; break;
         case 2: rank = "2"; break;
         case 3: rank = "3"; break;
@@ -36,10 +35,10 @@ function cardToString() {
     }
 
     switch(this.suit){
-        case 'C': suit = "Clubs"; break;
-        case 'D': suit = "Diamonds"; break;
-        case 'H': suit = "Hearts"; break;
-        case 'S': suit = "Spades"; break;
+        case 1: suit = "Clubs"; break;
+        case 2: suit = "Diamonds"; break;
+        case 3: suit = "Hearts"; break;
+        case 4: suit = "Spades"; break;
         default: suit = null; break;
     }
 
@@ -50,18 +49,32 @@ function cardToString() {
     return rank + " of " + suit;
 }
 function cardImage(){
+    switch(this.rank){
+        case 1: rank = "A"; break;
+        case 2: rank = "2"; break;
+        case 3: rank = "3"; break;
+        case 4: rank = "4"; break;
+        case 5: rank = "5"; break;
+        case 6: rank = "6"; break;
+        case 7: rank = "7"; break;
+        case 8: rank = "8"; break;
+        case 9: rank = "9"; break;
+        case 10: rank = "10"; break;
+        case 11: rank = "J"; break;
+        case 12: rank = "Q"; break;
+        case 13: rank = "K"; break;
+        default: rank = null; break;
+    }
 
-    var img = document.createElement("IMG");
-    img.src='cards/'+this.rank + this.suit + ".png";
-
-    return img;
-//document.getElementById(elementID).append(img);
-
+    switch(this.suit){
+        case 1: suit = "C"; break;
+        case 2: suit = "D"; break;
+        case 3: suit = "H"; break;
+        case 4: suit = "S"; break;
+        default: suit = null; break;
+    }
+    return "<img src='/Cards/"+ rank + suit + ".png' />";;
 }
-var rank = parseInt((Math.random()*12)+1);
-var suit = parseInt((Math.random()*3)+1);
-var testCard = new Card(3,'D');
-$("#hand").append(testCard.image("hand"));
 
 function Deck() {
 
@@ -108,7 +121,7 @@ function deckDeal(){
 
 function deckDraw(n){
 
-    if(n >= 0 && n < this.cards.length){
+    if(n-1 >= 0 && n-1 < this.cards.length){
         return this.cards.splice(n-1,1);
         
     }else
@@ -118,13 +131,11 @@ function deckAddCard(card){
         this.cards.push(card);
 }
 
-
 function deckStackDeck(deck){
     for(var i = 0; i < deck.cards.length; i++){
         this.cards.push(deck.cards[i]);
     }
     deck.cards = [];
-
 }
 
 var deck = new Deck();
@@ -132,18 +143,14 @@ var hand = new Deck();
 
 deck.makeDeck();
 deck.shuffle();
-alert(deck.cards);
 
 for(var i = 0; i < 7; i++){
     hand.addCard(deck.deal());
 }
 
-alert(hand.cards);
-
-deck.combine(hand);
-
-alert(deck.cards);
-alert(hand.cards);
+for(var i = 0; i < hand.cards.length; i++){
+    $("#hand").append(hand.cards[i].image());
+}
 
 
 
